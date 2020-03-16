@@ -1,0 +1,30 @@
+name: Publish
+
+on:
+  pull-request:
+    types: [closed]
+    branches:
+      - master
+
+jobs:
+  Publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+      - name: Test & Lint
+        run: |
+          npm install
+          npm run lint
+          npm run ci
+      - name: Build
+        if: success()
+        run: |
+          npm run build
+      - name: Publish
+        if: success()
+        run: |
+          echo _auth=${{ secrets.NPM_PUBLISH_KEY }} >> .npmrc
+          echo email=${{ secrets.NPM_PUBLISH_EMAIL }} >> .npmrc
+          echo always-auth=true >> .npmrc
+          npm publish

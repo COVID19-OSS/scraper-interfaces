@@ -6,8 +6,12 @@
   "scripts": {
     "test": ". etc/test.env && jest",
     "ci": "jest --coverage",
-    "lint": "eslint . --ext .ts,.tsx"
+    "lint": "eslint . --ext .ts,.tsx",
+    "build": "tsc"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:covid19-fyi/scraper-interfaces.git"
