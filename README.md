@@ -1,4 +1,4 @@
-# Scraper Interfaces &middot; [![GitHub license](https://img.shields.io/github/license/COVID19-FYI/scraper-interfaces)](https://github.com/COVID19-FYI/scraper-interfaces/blob/master/LICENSE) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/COVID19-FYI/scraper-interfaces/pulls)
+# Scraper Interfaces &middot; [![GitHub license](https://img.shields.io/github/license/COVID19-FYI/scraper-interfaces)](https://github.com/COVID19-FYI/scraper-interfaces/blob/master/LICENSE) [![NPM Version](https://img.shields.io/npm/v/@covid19/scraper-interfaces?color=%230B7CBC)](https://www.npmjs.com/package/@covid19/scraper-interfaces) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/COVID19-FYI/scraper-interfaces/pulls)
 
 COVID19 Scraper Interfaces
 
