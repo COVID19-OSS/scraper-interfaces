@@ -19,6 +19,8 @@ If you're interested in viewing our sources you may do so [here](https://docs.go
 
 ## Contributing
 
+See [CONTRIBUTING](./CONTRIBUTING.md) for details on submitting patches and the contribution workflow.
+
 ## Code of Conduct
 
 ## License
