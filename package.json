@@ -1,7 +1,7 @@
 {
   "name": "@covid19/scraper-interfaces",
   "private": false,
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "a data normalization and fetching library for sources with covid19 data",
   "main": "dist/index.js",
   "scripts": {
