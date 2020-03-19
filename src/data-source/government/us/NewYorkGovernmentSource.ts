@@ -34,14 +34,13 @@ export class NewYorkGovernmentSource extends DataSource {
   }
 
   public async getPageContent(): Promise<string> {
-    const result = await cloudscraper.get({
+    return cloudscraper.get({
       url: NEW_YORK_SOURCE_URL,
       headers: {
         "Host": "coronavirus.health.ny.gov",
         "User-Agent": new UserAgent().toString(),
       }
     });
-    return result;
   }
 
   public async parsePageContent(pageContentHtml: string): Promise<SourceData> {
