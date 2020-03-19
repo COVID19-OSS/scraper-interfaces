@@ -33,7 +33,7 @@ export class NewYorkGovernmentSource extends DataSource {
     super(SourceType.GOVERNMENT, NEW_YORK_FEATURES);
   }
 
-  public async getPageContent(): Promise<string> {
+  protected async loadPageContent(): Promise<string> {
     return cloudscraper.get({
       url: NEW_YORK_SOURCE_URL,
       headers: {
@@ -43,7 +43,8 @@ export class NewYorkGovernmentSource extends DataSource {
     });
   }
 
-  public async parsePageContent(pageContentHtml: string): Promise<SourceData> {
+  public async loadSourceData(): Promise<SourceData> {
+    const pageContentHtml = await this.loadPageContent();
     const page = cheerio.load(pageContentHtml);
 
     const tableRows = page("tbody").children().get().map(row => cheerio(row).children().get());

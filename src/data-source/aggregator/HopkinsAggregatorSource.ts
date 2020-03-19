@@ -35,7 +35,7 @@ export class HopkinsAggregatorSource extends DataSource {
     super(SourceType.AGGREGATOR, HOPKINS_FEATURES);
   }
 
-  public async getPageContent(): Promise<string> {
+  protected async loadPageContent(): Promise<Array<object>> {
     const metadataResponse = await axios.get(HOPKINS_METADATA_URL, {
       headers: {
         "Content-Type": "application/json"
@@ -51,12 +51,12 @@ export class HopkinsAggregatorSource extends DataSource {
       resultRecordCount: 1000
     });
     const featureServerResponse = await axios.get(`${metadataResponse.data.url}/2/query?${featureQueryString}`);
-    return JSON.stringify(featureServerResponse.data.features);
+    return featureServerResponse.data.features;
   }
 
-  public async parsePageContent(pageContentJSON: string): Promise<SourceData> {
-    const parsed = JSON.parse(pageContentJSON);
-    const localities = parsed.reduce((localities: any, { attributes }: any) => {
+  public async loadSourceData(): Promise<SourceData> {
+    const pageContent = await this.loadPageContent();
+    const localities = pageContent.reduce((localities: any, { attributes }: any) => {
       const locationDataPoint: any = {};
       Object.entries(HOPKINS_FIELD_REMAPPER).forEach(entry => {
         if (attributes[entry[0]]) {

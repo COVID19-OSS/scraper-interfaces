@@ -8,8 +8,7 @@ describe("NewYorkGovernmentSource", () => {
   test("Should fetch and parse", async () => {
     try {
       const dataSource = DataSourceRegistry.getDataSource(DataSourceName.NEW_YORK_GOV);
-      const html = await dataSource.getPageContent();
-      await dataSource.parsePageContent(html);
+      await dataSource.loadSourceData();
     }
     catch (e) {
       console.error(e);

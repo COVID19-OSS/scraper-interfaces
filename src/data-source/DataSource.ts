@@ -27,11 +27,11 @@ export abstract class DataSource {
    * Utilize some method to fetch the page and return its content.
    * @returns {string} html
    */
-  public abstract async getPageContent(): Promise<string>;
+  protected abstract async loadPageContent(): Promise<string | object | Array<object>>;
 
   /**
    * Parse the page content from HTML into a normalized format.
    * @returns {SourceData}
    */
-  public abstract async parsePageContent(pageContentHtml: string): Promise<SourceData>;
+  public abstract async loadSourceData(): Promise<SourceData>;
 }

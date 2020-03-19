@@ -7,7 +7,6 @@ import { DataSourceName, DataSourceRegistry } from "../../src";
 describe("HopkinsAggregatorSource", () => {
   test("Should fetch and parse", async () => {
     const dataSource = DataSourceRegistry.getDataSource(DataSourceName.JOHNS_HOPKINS);
-    const json = await dataSource.getPageContent();
-    await dataSource.parsePageContent(json);
+    await dataSource.loadSourceData();
   });
 });
