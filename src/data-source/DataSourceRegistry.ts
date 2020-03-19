@@ -2,7 +2,7 @@ import { DataSource } from "./DataSource";
 import { DataSourceName } from "..";
 
 import { NewYorkGovernmentSource } from "./government";
-import { HopkinsAggregatorSource } from "./aggregator/HopkinsAggregatorSource";
+import { HopkinsAggregatorSource } from "./aggregator";
 
 /**
  * DataSourceRegistry Class

@@ -16,8 +16,25 @@ of different sources, so make a PR today!
 If you're interested in viewing our sources you may do so [here](https://docs.google.com/spreadsheets/d/1Uw6RPRejs0lg-2F8VrWgY8ZX_8f4YHt38-KmJrXYcb0/edit?usp=sharing). If you have a suggestion for a source please [open an issue](https://github.com/COVID19-OSS/scraper-interfaces/issues/new). We ask that if you're going to suggest a source that you only submit 1st-party government sources at this time; we are not looking for other websites or aggregators. Thank you for your help!
 
 ## Installation
+```shell script
+git clone git@github.com:covid19-oss/scraper-interfaces.git
+cd scraper-interfaces
+nvm use 12 # optional
+npm install
+```
 
 ## Contributing
+#### How to add a source to our SDK:
+1. Create a class in the `src/data-source` folder under the proper source type and geo-locality (if applicable).
+2. Ensure your class inherits the `DataSource` base class.
+3. Implement the `loadPageContent` (which can return an object, an array objects or a string (html)).
+4. Implement the `loadSourceData` method which will call the `loadPageContent` and return normalized data.
+5. Create a source name in `src/definitions/DataSourceName`.
+6. Create a mapping entry in the registry `src/data-source/DataSourceRegistry`
+7. Implement a rudimentary unit test for your DataSource
+8. Run tests and the linter so you can correct anything that's not quite right.
+9. Prepare a PR for us to review using the guide below.
+10. Accept our gratitude for your amazing contribution!
 
 See [CONTRIBUTING](./CONTRIBUTING.md) for details on submitting patches and the contribution workflow.
 
