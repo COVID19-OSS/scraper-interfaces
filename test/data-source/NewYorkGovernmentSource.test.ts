@@ -9,8 +9,7 @@ describe("NewYorkGovernmentSource", () => {
     try {
       const dataSource = DataSourceRegistry.getDataSource(DataSourceName.NEW_YORK_GOV);
       const html = await dataSource.getPageContent();
-      const result = await dataSource.parsePageContent(html);
-      console.log(result);
+      await dataSource.parsePageContent(html);
     }
     catch (e) {
       console.error(e);
