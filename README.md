@@ -23,6 +23,10 @@ See [CONTRIBUTING](./CONTRIBUTING.md) for details on submitting patches and the 
 
 ## Code of Conduct
 
+we follow [Contributor Covenant v2.0][code-of-conduct]
+
 ## License
 
 This library is [GPL-3.0 Licensed](./LICENSE)
+
+[code-of-conduct]: ./code-of-conduct.md
