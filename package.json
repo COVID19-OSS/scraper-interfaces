@@ -8,6 +8,7 @@
     "test": ". etc/test.env && jest",
     "ci": "jest --coverage",
     "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "build": "tsc"
   },
   "files": [
