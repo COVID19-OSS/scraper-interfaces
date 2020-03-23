@@ -3,6 +3,7 @@ import { DataSourceName } from "..";
 
 import { NewYorkGovernmentSource } from "./government";
 import { ColombiaGovernmentSource } from "./government";
+import { NetherlandsGovernmentSource } from "./government";
 import { HopkinsAggregatorSource } from "./aggregator/HopkinsAggregatorSource";
 
 /**
@@ -19,6 +20,7 @@ export class DataSourceRegistry {
     mapping.set(DataSourceName.NEW_YORK_GOV, NewYorkGovernmentSource.prototype);
     mapping.set(DataSourceName.COLOMBIA_GOV, ColombiaGovernmentSource.prototype);
     mapping.set(DataSourceName.JOHNS_HOPKINS, HopkinsAggregatorSource.prototype);
+    mapping.set(DataSourceName.NETHERLANDS_GOV, NetherlandsGovernmentSource.prototype)
     return mapping;
   }
 
